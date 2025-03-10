@@ -1,16 +1,15 @@
 import pandas as pd
-
-##Escribir una funcion que recib aun diccionario con las ontas de los estudiantes del curso y devuelve una serie con minimo, maximo, media, desviacion estandar
-
+##Escribir una funcion que reciba un diccionario con las nptas de los estuudiantes del curso y devuelve un minimo,maximo,media
 def estadistica_notas(notas):
     notas = pd.Series(notas)
-    estadisticas = pd.Series([notas.min(), notas.max(), notas.mean(), notas.std()], index =['Minimo', 'Maximo', 'Desviacion estandar'])
-    return estadisticas
-
-notas = {'Juan': 10, 'Isaac': 1, 'Fabian': 6, 'Maxi': 2, 'Owen': 3, 'Maria': 4, 'Maclovio': 1}
+    estadistica = pd.Series([notas.min(), notas.max(), notas.mean(), notas.std()],  index =['Min', 'Max', 'Media','Desviacion'])
+    return estadistica
 
 def aprobados(notas):
     notas = pd.Series(notas)
-    return notas[notas>= 5].sort_values(ascending=false)
+    return notas [notas >= 6].sort_values(ascending=False)
+
+notas = {'Juan': 9, 'Omar': 8, 'Owen': 9, 'Poncho': 3}
 
 print(estadistica_notas(notas))
+print
