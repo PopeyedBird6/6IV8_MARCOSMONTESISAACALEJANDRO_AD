@@ -25,5 +25,18 @@ print(df['total_bedrooms'].median())
 # Obtener la suma de la columna population
 print(df['population'].sum())
 
-# Filtrar por ocean_proximity == 'ISLAND'
+# Filtrar
 print(df[df['ocean_proximity'] == 'ISLAND'])
+
+# 📊 Crear una gráfica de dispersión entre total_rooms y median_house_value
+plt.figure(figsize=(8, 6))
+plt.scatter(df['total_rooms'], df['median_house_value'], alpha=0.3, color='blue')
+
+# Agregar títulos y etiquetas
+plt.title('Relación entre Total de Habitaciones y Valor Medio de la Casa')
+plt.xlabel('Total de Habitaciones')
+plt.ylabel('Valor Medio de la Casa')
+plt.grid(True)  # Agregar cuadricula
+
+# Mostrar la gráfica
+plt.show()
